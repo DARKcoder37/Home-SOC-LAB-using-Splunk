@@ -98,7 +98,7 @@ These are the intended lab addresses and the addresses previously configured. Co
               Incident report and evidence
 ```
 
-**Planned telemetry flow:** Windows event collection will be configured using Splunk Universal Forwarder and/or a supported Windows event collection method. The final collection method will be documented once implemented.
+**Planned telemetry flow:** Splunk Universal Forwarder will be installed on the Windows endpoint to forward selected Windows Security and Sysmon events to Splunk Enterprise. The configuration will be validated after installation.
 
 ## 4. Host Environment
 
@@ -108,7 +108,6 @@ These are the intended lab addresses and the addresses previously configured. Co
 | Virtual machines        | Kali Linux, Windows 11, Ubuntu Desktop              |
 | SIEM                    | Splunk Enterprise                                   |
 | Network mode            | VirtualBox Internal Network                         |
-| Project deadline        | Initial build targeted for Tuesday, 13 October 2026 |
 
 Virtual machine memory, CPU allocation, and disk sizing will be tuned to the host's available resources. Running all three VMs simultaneously may require reducing their resource allocations.
 
@@ -181,7 +180,7 @@ Use official sources wherever possible. Check current licensing, platform compat
 * Configure Windows audit policies for relevant security events.
 * Inspect logs using Windows Event Viewer.
 * Install Sysmon with a documented, suitable configuration.
-* Install and configure Splunk Universal Forwarder or another supported collection method.
+* Install and configure Splunk Universal Forwarder on the Windows endpoint.
 * Forward relevant Windows Security and Sysmon events.
 * Validate event ingestion, timestamps, host names, and field extraction.
 
@@ -251,7 +250,6 @@ For each test case:
 7. Record the detection's limitations and possible improvements.
 
 **Deliverables:** Incident investigation reports, event timelines, evidence screenshots, and remediation recommendations.
-
 
 ## 7. Detection and Investigation Scenarios
 
@@ -347,32 +345,64 @@ Use Git to track changes to your SPL files, investigation reports, configuration
 A suggested repository layout:
 
 ```text
+```text
 splunk-soc-home-lab/
 ├── README.md
-├── docs/
-│   ├── phase-1-lab-setup.md
-│   ├── splunk-installation.md
-│   ├── windows-log-collection.md
-│   ├── spl-fundamentals.md
-│   ├── detection-engineering.md
-│   └── incident-investigation.md
-├── detections/
+├── .gitignore
+│
+├── Phase-1-Lab-Setup/
+│   ├── README.md
+│   ├── network-configuration/
+│   ├── ip-addressing/
+│   ├── screenshots/
+│   └── test-results/
+│
+├── Phase-2-Splunk-Installation/
+│   ├── README.md
+│   ├── installation-notes/
+│   ├── configuration/
+│   ├── splunk-searches/
+│   └── screenshots/
+│
+├── Phase-3-Windows-Log-Collection/
+│   ├── README.md
+│   ├── windows-audit-policy/
+│   ├── sysmon/
+│   ├── universal-forwarder/
+│   ├── sample-events/
+│   └── screenshots/
+│
+├── Phase-4-SPL-Fundamentals/
+│   ├── README.md
+│   ├── filtering/
+│   ├── aggregation/
+│   ├── time-analysis/
+│   ├── field-extraction/
+│   └── queries.spl
+│
+├── Phase-5-Detection-Engineering/
+│   ├── README.md
 │   ├── authentication/
 │   ├── account-management/
 │   ├── process-execution/
-│   └── powershell/
-├── investigations/
-│   ├── templates/
-│   └── cases/
-├── configs/
-│   ├── sysmon/
-│   └── splunk/
-├── screenshots/
-├── test-results/
-└── .gitignore
+│   ├── powershell/
+│   ├── detection-template.md
+│   └── test-results/
+│
+├── Phase-6-Adversary-Simulation/
+│   ├── README.md
+│   ├── test-plans/
+│   ├── activity-timelines/
+│   ├── sample-events/
+│   └── detection-validation/
+│
+└── Phase-7-Incident-Investigation/
+    ├── README.md
+    ├── investigation-template.md
+    ├── cases/
+    ├── evidence/
+    └── final-reports/
 ```
-
-Only add files and configurations that are relevant to the implemented lab. Sanitize screenshots and sample events before committing them.
 
 ## 10. Project Deliverables
 
