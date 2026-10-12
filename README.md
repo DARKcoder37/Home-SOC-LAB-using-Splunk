@@ -343,8 +343,7 @@ Use Git to track changes to your SPL files, investigation reports, configuration
 
 A suggested repository layout:
 
-```text
-```text
+```
 splunk-soc-home-lab/
 ├── README.md
 ├── .gitignore
