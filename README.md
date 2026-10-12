@@ -20,7 +20,6 @@ The project simulates a small enterprise environment where an analyst collects e
 * [10. Project Deliverables](#10-project-deliverables)
 * [11. Success Criteria](#11-success-criteria)
 * [12. Security and Safety](#12-security-and-safety)
-* [13. Progress Tracker](#13-progress-tracker)
 
 ## 1. Project Overview
 
