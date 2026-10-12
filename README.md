@@ -104,12 +104,9 @@ These are the intended lab addresses and the addresses previously configured. Co
 
 | Resource                | Configuration                                       |
 | ----------------------- | --------------------------------------------------- |
-| Host operating system   | Windows 11                                          |
-| Processor               | Intel Core i7, 10th generation                      |
-| Host RAM                | 16 GB                                               |
 | Virtualization platform | Oracle VirtualBox                                   |
 | Virtual machines        | Kali Linux, Windows 11, Ubuntu Desktop              |
-| SIEM                    | Splunk Enterprise — planned                         |
+| SIEM                    | Splunk Enterprise                                   |
 | Network mode            | VirtualBox Internal Network                         |
 | Project deadline        | Initial build targeted for Tuesday, 13 October 2026 |
 
