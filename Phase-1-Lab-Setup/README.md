@@ -69,6 +69,15 @@ The network design separates the lab environment from the host's normal network 
 
 The virtual machines were configured to use the VirtualBox Internal Network named `SOC-LAB` for lab communication.
 
+## Steps to change the settings
+1) Open Oracle VirtualBox Manager.
+2) Select the Kali Linux virtual machine.
+3) Click Settings → Network.
+4) Under Adapter 1, enable the network adapter.
+5) Set Attached to to Internal Network.
+5) Enter SOC-LAB as the network name.
+6) Click OK to save the settings.
+
 ### Kali Linux Network Adapter
 
 <!-- Screenshot 2: Insert a screenshot of VirtualBox Manager → Kali Linux → Settings → Network → Adapter 1. Show that the adapter is enabled, Attached to is Internal Network, and the network name is SOC-LAB. -->
