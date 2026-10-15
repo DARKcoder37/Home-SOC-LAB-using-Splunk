@@ -78,7 +78,7 @@ The virtual machines were configured to use the VirtualBox Internal Network name
 5) Enter SOC-LAB as the network name.
 6) Click OK to save the settings.
 
-# Repeat the same steps for Ubuntu and Windows 11
+**Repeat the same steps for Ubuntu and Windows 11**
 
 ### Network Adapter
 
