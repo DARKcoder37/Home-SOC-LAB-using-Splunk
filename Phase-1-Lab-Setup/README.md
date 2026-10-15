@@ -147,6 +147,28 @@ The `ping` command was used to test IP-level reachability between the lab machin
 
 The tests above represent the intended validation matrix. The screenshots below should show the actual commands and successful results from your lab.
 
+**Run the following commands from the indicated machines.**
+
+**From Kali Linux:**
+
+```bash
+ping -c 4 192.168.50.20
+ping -c 4 192.168.50.30
+```
+
+**From Ubuntu Desktop:**
+
+```bash
+ping -c 4 192.168.50.10
+ping -c 4 192.168.50.20
+```
+
+**From Windows 11 PowerShell:**
+
+```powershell
+ping 192.168.50.10
+ping 192.168.50.30
+
 ### Connectivity Test Evidence
 
 <!-- Screenshot 8: Insert a screenshot from Kali showing successful ping replies from Windows 11 and Ubuntu. Include the commands and enough output to demonstrate successful replies. -->
