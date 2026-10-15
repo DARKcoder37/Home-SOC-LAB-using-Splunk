@@ -171,6 +171,14 @@ The tests above represent the intended validation matrix. The screenshots below 
 
 The lab network configuration and connectivity tests were completed successfully. The three virtual machines are configured for communication over the `SOC-LAB` network, providing the network foundation required for the subsequent Splunk installation and telemetry collection phases.
 
+> **Troubleshooting Note — Windows Firewall:** If ping requests to the Windows 11 VM fail, Windows Firewall may be blocking incoming ICMPv4 echo requests. To allow ping, open **PowerShell as Administrator** on the Windows VM and run:
+
+```powershell
+netsh advfirewall firewall add rule name="Allow ICMPv4 Echo Request" protocol=icmpv4:8,any dir=in action=allow
+```
+
+This rule allows incoming IPv4 ping requests. Use it only as appropriate for your isolated SOC lab. If ping still fails, verify the IP addresses, subnet masks, VirtualBox Internal Network settings, and firewall rules on the destination VM.
+
 ## 7. Security Considerations
 
 The lab was designed with isolation and controlled testing in mind.
