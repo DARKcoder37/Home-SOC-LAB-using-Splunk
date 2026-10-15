@@ -78,29 +78,15 @@ The virtual machines were configured to use the VirtualBox Internal Network name
 5) Enter SOC-LAB as the network name.
 6) Click OK to save the settings.
 
-### Kali Linux Network Adapter
+## Repeat the same steps for Ubuntu and Windows 11
+
+### Network Adapter
 
 <!-- Screenshot 2: Insert a screenshot of VirtualBox Manager → Kali Linux → Settings → Network → Adapter 1. Show that the adapter is enabled, Attached to is Internal Network, and the network name is SOC-LAB. -->
 
-![Kali Linux Network Adapter](screenshots/phase1-kali-network-adapter.png)
+![Kali Linux Network Adapter](screenshots/phase1-network-adapter.png)
 
-*Figure 2: Kali Linux network adapter configuration.*
-
-### Windows 11 Network Adapter
-
-<!-- Screenshot 3: Insert a screenshot of VirtualBox Manager → Windows 11 → Settings → Network → Adapter 1. Show that the adapter is enabled and connected to the SOC-LAB Internal Network. -->
-
-![Windows 11 Network Adapter](screenshots/phase1-windows-network-adapter.png)
-
-*Figure 3: Windows 11 network adapter configuration.*
-
-### Ubuntu Desktop Network Adapter
-
-<!-- Screenshot 4: Insert a screenshot of VirtualBox Manager → Ubuntu Desktop → Settings → Network → Adapter 1. Show that the adapter is enabled and connected to the SOC-LAB Internal Network. -->
-
-![Ubuntu Network Adapter](screenshots/phase1-ubuntu-network-adapter.png)
-
-*Figure 4: Ubuntu Desktop network adapter configuration.*
+*Figure 2: Network adapter configuration.*
 
 Using the same internal network name on the lab adapters places the virtual machines on the same VirtualBox internal network. The IP address configuration inside each guest determines how they communicate over IPv4.
 
