@@ -168,6 +168,7 @@ ping -c 4 192.168.50.20
 ```powershell
 ping 192.168.50.10
 ping 192.168.50.30
+```
 
 ### Connectivity Test Evidence
 
