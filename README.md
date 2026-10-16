@@ -350,10 +350,7 @@ splunk-soc-home-lab/
 │
 ├── Phase-1-Lab-Setup/
 │   ├── README.md
-│   ├── network-configuration/
-│   ├── ip-addressing/
-│   ├── screenshots/
-│   └── test-results/
+│   └── screenshots/
 │
 ├── Phase-2-Splunk-Installation/
 │   ├── README.md
