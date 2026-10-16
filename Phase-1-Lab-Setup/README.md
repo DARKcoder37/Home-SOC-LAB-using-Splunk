@@ -108,6 +108,7 @@ No default gateway or DNS server is required on the isolated lab interface for c
    nmcli connection show
    ```
 2) Find the connection profile associated with eth0. If its name is Wired connection 1, run:
+
    For Kali VM
    ```bash
    sudo nmcli connection modify "Wired connection 1" \
@@ -125,7 +126,8 @@ No default gateway or DNS server is required on the isolated lab interface for c
    ipv4.gateway "" \
    ipv4.dns ""
    ```
-3) Then apply the setting with the following command
+   
+4) Then apply the setting with the following command
    ```bash
    sudo nmcli connection up "Wired connection 1"
    ```
