@@ -53,7 +53,6 @@ The network uses the private IPv4 subnet `192.168.50.0/24`, with each virtual ma
 <!-- Screenshot 1: Insert a clear network architecture diagram showing the Windows 11 host, VirtualBox, the SOC-LAB internal network (192.168.50.0/24), and the three VMs with their roles and IP addresses. Clearly distinguish the host from the virtual machines. -->
 
 ![SOC Home Lab Network Architecture](screenshots/phase1-network-architecture.png)
-
 *Figure 1: SOC Home Lab network architecture and IP addressing plan.*
 
 ### Network Design
@@ -85,7 +84,6 @@ The virtual machines were configured to use the VirtualBox Internal Network name
 <!-- Screenshot 2: Insert a screenshot of VirtualBox Manager → Kali Linux → Settings → Network → Adapter 1. Show that the adapter is enabled, Attached to is Internal Network, and the network name is SOC-LAB. -->
 
 ![Kali Linux Network Adapter](screenshots/phase1-network-adapter.png)
-
 *Figure 2: Network adapter configuration.*
 
 Using the same internal network name on the lab adapters places the virtual machines on the same VirtualBox internal network. The IP address configuration inside each guest determines how they communicate over IPv4.
@@ -103,6 +101,47 @@ The `/24` prefix corresponds to the subnet mask `255.255.255.0`. The addresses a
 | Ubuntu Desktop  | `192.168.50.30` | `255.255.255.0` | Planned SIEM host  |
 
 No default gateway or DNS server is required on the isolated lab interface for communication between these machines on the same subnet. Internet access, if needed for downloads, should be handled separately and deliberately.
+
+**For Kali and Ubuntu VM**
+1) Open terminal and run:
+   ```bash
+   nmcli connection show
+   ```
+2) Find the connection profile associated with eth0. If its name is Wired connection 1, run:
+   For Kali VM
+   ```bash
+   sudo nmcli connection modify "Wired connection 1" \
+   ipv4.method manual \
+   ipv4.addresses 192.168.50.10/24 \
+   ipv4.gateway "" \
+   ipv4.dns ""
+   ```
+
+   For Ubuntu VM
+   ```bash
+   sudo nmcli connection modify "Wired connection 1" \
+   ipv4.method manual \
+   ipv4.addresses 192.168.50.30/24 \
+   ipv4.gateway "" \
+   ipv4.dns ""
+   ```
+3) Then apply the setting with the following command
+   ```bash
+   sudo nmcli connection up "Wired connection 1"
+   ```
+
+**For Windows**
+1) Inside VM, open settings and select "Network & internet"
+2) Click on edit
+![Win 11 IP config](screenshots/phase1-win-ip-configuration-1.png)
+*Figure 3: Win IP address config.*
+
+3) Enter as shown in the image below
+![Win 11 IP config](screenshots/phase1-win-ip-configuration-2.png)
+*Figure 4: Win IP address config.*
+
+
+
 
 ### Kali Linux IP Configuration
 
@@ -197,7 +236,7 @@ The lab network configuration and connectivity tests were completed successfully
 > **Troubleshooting Note — Windows Firewall:** If ping requests to the Windows 11 VM fail, Windows Firewall may be blocking incoming ICMPv4 echo requests. To allow ping, open **PowerShell as Administrator** on the Windows VM and run:
 
 ```powershell
-netsh advfirewall firewall add rule name="Allow ICMPv4 Echo Request" protocol=icmpv4:8,any dir=in action=allow
+New-NetFirewallRule -DisplayName "SOC Lab ICMPv4 Echo" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow -RemoteAddress 192.168.50.0/24 -Profile Any
 ```
 
 This rule allows incoming IPv4 ping requests. Use it only as appropriate for your isolated SOC lab. If ping still fails, verify the IP addresses, subnet masks, VirtualBox Internal Network settings, and firewall rules on the destination VM.
