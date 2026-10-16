@@ -76,7 +76,8 @@ The virtual machines were configured to use the VirtualBox Internal Network name
 4) Under Adapter 1, enable the network adapter.
 5) Set Attached to to Internal Network.
 5) Enter SOC-LAB as the network name.
-6) Click OK to save the settings.
+6) Click on Advance and select the "Cable Connected" check box.
+7) Click OK to save the settings.
 
 **Repeat the same steps for Ubuntu and Windows 11**
 
