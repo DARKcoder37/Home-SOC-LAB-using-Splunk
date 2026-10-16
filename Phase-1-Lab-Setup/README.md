@@ -102,6 +102,8 @@ The `/24` prefix corresponds to the subnet mask `255.255.255.0`. The addresses a
 
 No default gateway or DNS server is required on the isolated lab interface for communication between these machines on the same subnet. Internet access, if needed for downloads, should be handled separately and deliberately.
 
+### Steps for IP configuration for all VMs
+
 **For Kali and Ubuntu VM**
 1) Open terminal and run:
    ```bash
@@ -135,10 +137,12 @@ No default gateway or DNS server is required on the isolated lab interface for c
 **For Windows**
 1) Inside VM, open settings and select "Network & internet"
 2) Click on edit
+
 ![Win 11 IP config](screenshots/phase1-win-ip-configuration-1.png)
 *Figure 3: Win IP address config.*
 
-3) Enter as shown in the image below
+4) Enter as shown in the image below
+
 ![Win 11 IP config](screenshots/phase1-win-ip-configuration-2.png)
 *Figure 4: Win IP address config.*
 
