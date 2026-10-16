@@ -4,7 +4,6 @@ A hands-on Security Operations Center (SOC) home lab built to learn SIEM adminis
 
 The project simulates a small enterprise environment where an analyst collects endpoint telemetry, investigates suspicious activity, writes detection searches, and documents findings using a controlled virtual lab.
 
-> **Project status:** In progress — virtual machines are installed. Splunk installation, log forwarding, detection engineering, and investigation exercises are pending.
 
 ## Table of Contents
 
