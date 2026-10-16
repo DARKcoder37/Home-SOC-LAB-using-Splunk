@@ -53,6 +53,7 @@ The network uses the private IPv4 subnet `192.168.50.0/24`, with each virtual ma
 <!-- Screenshot 1: Insert a clear network architecture diagram showing the Windows 11 host, VirtualBox, the SOC-LAB internal network (192.168.50.0/24), and the three VMs with their roles and IP addresses. Clearly distinguish the host from the virtual machines. -->
 
 ![SOC Home Lab Network Architecture](screenshots/phase1-network-architecture.png)
+
 *Figure 1: SOC Home Lab network architecture and IP addressing plan.*
 
 ### Network Design
@@ -84,6 +85,7 @@ The virtual machines were configured to use the VirtualBox Internal Network name
 <!-- Screenshot 2: Insert a screenshot of VirtualBox Manager → Kali Linux → Settings → Network → Adapter 1. Show that the adapter is enabled, Attached to is Internal Network, and the network name is SOC-LAB. -->
 
 ![Kali Linux Network Adapter](screenshots/phase1-network-adapter.png)
+
 *Figure 2: Network adapter configuration.*
 
 Using the same internal network name on the lab adapters places the virtual machines on the same VirtualBox internal network. The IP address configuration inside each guest determines how they communicate over IPv4.
@@ -139,12 +141,14 @@ No default gateway or DNS server is required on the isolated lab interface for c
 2) Click on edit
 
 ![Win 11 IP config](screenshots/phase1-win-ip-configuration-1.png)
-*Figure 3: Win IP address config.*
+
+*Figure 3: Win IP address configuration-1.*
 
 4) Enter as shown in the image below
 
 ![Win 11 IP config](screenshots/phase1-win-ip-configuration-2.png)
-*Figure 4: Win IP address config.*
+
+*Figure 4: Win IP address configuration-2.*
 
 
 
