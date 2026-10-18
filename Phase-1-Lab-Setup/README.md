@@ -250,7 +250,7 @@ The lab network configuration and connectivity tests were completed successfully
 New-NetFirewallRule -DisplayName "SOC Lab ICMPv4 Echo" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow -RemoteAddress 192.168.50.0/24 -Profile Any
 ```
 
-This rule allows incoming IPv4 ping requests. Use it only as appropriate for your isolated SOC lab. If ping still fails, verify the IP addresses, subnet masks, VirtualBox Internal Network settings, and firewall rules on the destination VM.
+> This rule allows incoming IPv4 ping requests. Use it only as appropriate for your isolated SOC lab. If ping still fails, verify the IP addresses, subnet masks, VirtualBox Internal Network settings, and firewall rules on the destination VM.
 
 ## 7. Security Considerations
 
